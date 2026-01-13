@@ -6,7 +6,7 @@
         <meta name="description" content="3rd Quarter Second Graded Exercisec - HTML Forms">
         <meta name="keywords" content="3Q, Portfolio, Projects, Web Development">
         <meta name="author" content="Sabbie Celis">
-        <title>HTML Form Exercise</title>
+        <title></title>
         <link rel="stylesheet" href="form.css">
         <link rel="icon" href="../assetimg/" sizes="16x16" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,64 +20,80 @@
         <header>
 
         </header>
-        <h1>sample</h1>
+        <div class="box">
+        <h1>Club Application Form</h1>
         <form>
-            <label for="studentID">Student ID:</label><br>
-            <input type="number" id="studentID" placeholder=""><br><br>
+            <fieldset>
+            <legend>Personal Information</legend>
+                <label for="studentID">Student ID:</label><br>
+                <input type="number" id="studentID" required><br><br>
 
-            <label for="fullName">Full name:</label><br>
-            <input id="fullName" type="text"><br><br>
+                <label for="fullName">Full name:</label><br>
+                <input id="fullName" type="text" required><br><br>
 
-            <label for="userBirthday">Birth Date:</label><br>
-            <input type="date" id="userBirthday"><br><br>
+                <label for="userBirthday">Birth Date:</label><br>
+                <input type="date" id="userBirthday" required><br><br>
 
-            <label for="userEmail">Email Address:</label><br>
-            <input type="userEmail" id="email"><br><br>
+                <label for="userEmail">Email Address:</label><br>
+                <input type="email" id="email" required><br><br>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label for="phoneNumber">Mobile Phone:</label><br>
+                <input type="text" id="phoneNumber" required><br><br>
 
-            <label for="phoneNumber">Mobile Phone:</label><br>
-            <input type="text" id="phoneNumber"><br><br>
-
-            <label for="gradeLevel">Grade Level:</label><br>
-            <select>
-                <optgroup label="FYP">
-                    <option value="grade7">Grade 7</option>
-                    <option value="grade8">Grade 8</option>
-                </optgroup>
-                <optgroup label="AYP">
-                    <option value="grade9">Grade 9</option>
-                    <option value="grade10">Grade 10</option>
-                </optgroup>
-                <optgroup label="SYP">
-                    <option value="grade11">Grade 11</option>
-                    <option value="grade12">Grade 12</option>
-                </optgroup>
-            </select> <br><br>
-            <label for="radioIE">Intern or Extern?</label><br>
-            <input type="radio" id="intern" value="Intern">
-            <label for="intern">Intern</label><br>
-            <input type="radio" id="extern" value="Extern">
-            <label for="extern">Extern</label>
-            <br><br>
-            <label for="userOrg">Preferred Organization / Club</label><br>
-            <select>
-                <optgroup label="Club A (7:30 AM - 9:00 AM)">
-                    <option value="performingArts" id="filoTheater">Kamalayan</option>
-                    <option value="sports" id="volleyball">Kislap</option>
-                    <option value="sports" id="frisbee">Alianti</option>
-                    <option value="sports" id="badminton">Volant</option>
-                </optgroup>
-                <optgroup label="Club B (9:10 AM - 10:40 AM)">
-                    <option value="performingArts" id="dance">Sagala</option>
-                    <option value="performingArts" id="engTheater">Sightlines</option>
-                    <option value="sports" id="football">Labuyo</option>
-                    <option value="performingArts" id="choir">Himig Agham</option>
-                </optgroup>
-            </select><br><br>
-            <label for="reason">Why do you want to join?<br>
-            <textarea id="reason">
+                <label for="gradeLevel">Grade Level:</label><br>
+                <select required>
+                    <option>Choose...</option>
+                    <optgroup label="FYP">
+                        <option value="grade7">Grade 7</option>
+                        <option value="grade8">Grade 8</option>
+                    </optgroup>
+                    <optgroup label="AYP">
+                        <option value="grade9">Grade 9</option>
+                        <option value="grade10">Grade 10</option>
+                    </optgroup>
+                    <optgroup label="SYP">
+                        <option value="grade11">Grade 11</option>
+                        <option value="grade12">Grade 12</option>
+                    </optgroup>
+                </select> <br><br>
+                <label for="radioIE">Intern or Extern?</label><br>
+                <input type="radio" id="intern" value="Intern">
+                <label for="intern">Intern</label><br>
+                <input type="radio" id="extern" value="Extern">
+                <label for="extern">Extern</label>
+                <br><br>
+                <label for="userOrg">Preferred Organization / Club</label><br>
+                <select required>
+                    <option>Choose...</option>
+                    <optgroup label="Club A (7:30 AM - 9:00 AM)">
+                        <option value="performingArts" id="filoTheater">Kamalayan</option>
+                        <option value="sports" id="volleyball">Kislap</option>
+                        <option value="sports" id="frisbee">Alianti</option>
+                        <option value="sports" id="badminton">Volant</option>
+                        <option value="arts" id="visualArts">Likha A</option>
+                    </optgroup>
+                    <optgroup label="Club B (9:10 AM - 10:40 AM)">
+                        <option value="performingArts" id="dance">Sagala</option>
+                        <option value="performingArts" id="engTheater">Sightlines</option>
+                        <option value="sports" id="football">Labuyo</option>
+                        <option value="performingArts" id="choir">Himig Agham</option>
+                        <option value="arts" id="visualArts">Likha B</option>
+                    </optgroup>
+                </select><br><br>
+            </fieldset>
+            <br>
+            <label for="reason">Why do you want to join the club you chose?<br>
+            <textarea id="reason" required>
             </textarea>
             </label>
+            <br><br>
+            <button type="submit">Submit</button>
+            <input type="reset" value="Clear" id="reset"/>
         </form>
+        </div>
         <footer>
             <section>
 
