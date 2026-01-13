@@ -7,7 +7,7 @@
         <meta name="keywords" content="3Q, Portfolio, Projects, Web Development">
         <meta name="author" content="Sabbie Celis">
         <title>HTML Form Exercise</title>
-        <link rel="stylesheet" href="format.css">
+        <link rel="stylesheet" href="form.css">
         <link rel="icon" href="../assetimg/" sizes="16x16" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,14 +61,22 @@
             <label for="userOrg">Preferred Organization / Club</label><br>
             <select>
                 <optgroup label="Club A (7:30 AM - 9:00 AM)">
-                    <option value="grade7">Kamalayan</option>
-                    <option value="volleyball">Kislap</option>
+                    <option value="performingArts" id="filoTheater">Kamalayan</option>
+                    <option value="sports" id="volleyball">Kislap</option>
+                    <option value="sports" id="frisbee">Alianti</option>
+                    <option value="sports" id="badminton">Volant</option>
                 </optgroup>
                 <optgroup label="Club B (9:10 AM - 10:40 AM)">
-                    <option value="grade9">Sagala</option>
-                    <option value="grade10">Sightlines</option>
+                    <option value="performingArts" id="dance">Sagala</option>
+                    <option value="performingArts" id="engTheater">Sightlines</option>
+                    <option value="sports" id="football">Labuyo</option>
+                    <option value="performingArts" id="choir">Himig Agham</option>
                 </optgroup>
-            </select>
+            </select><br><br>
+            <label for="reason">Why do you want to join?<br>
+            <textarea id="reason">
+            </textarea>
+            </label>
         </form>
         <footer>
             <section>
