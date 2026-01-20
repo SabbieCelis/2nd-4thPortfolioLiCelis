@@ -8,10 +8,11 @@
         <meta name="author" content="Sabbie Celis">
         <title></title>
         <link rel="stylesheet" href="form.css">
-        <link rel="icon" href="../assetimg/" sizes="16x16" type="image/png">
+        <script src="form.js" defer></script>
+        <link rel="icon" href="../assetimg/p5logo.png" sizes="16x16" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
         <style>
 
         </style>
@@ -20,11 +21,12 @@
         <header>
 
         </header>
+        
+        <h1 style="color: #ffffff;">Club Application Form</h1>
         <div class="box">
-        <h1>Club Application Form</h1>
         <form>
             <fieldset>
-            <legend>Personal Information</legend>
+            <legend><b>Personal Information</b></legend>
                 <label for="studentID">Student ID:</label><br>
                 <input type="number" id="studentID" required><br><br>
 
@@ -39,7 +41,7 @@
             </fieldset>
             <br>
             <fieldset>
-                <legend>Additional Information</legend>
+                <legend><b>Additional Information</b></legend>
                 <label for="phoneNumber">Mobile Phone:</label><br>
                 <input type="text" id="phoneNumber" required><br><br>
 
@@ -60,9 +62,9 @@
                     </optgroup>
                 </select> <br><br>
                 <label for="radioIE">Intern or Extern?</label><br>
-                <input type="radio" id="intern" value="Intern">
+                <input type="radio" id="intern" name="booleanDormer" value="Intern">
                 <label for="intern">Intern</label><br>
-                <input type="radio" id="extern" value="Extern">
+                <input type="radio" id="extern" name="booleanDormer" value="Extern">
                 <label for="extern">Extern</label>
                 <br><br>
                 <label for="userOrg">Preferred Organization / Club</label><br>
@@ -86,8 +88,7 @@
             </fieldset>
             <br>
             <label for="reason">Why do you want to join the club you chose?<br>
-            <textarea id="reason" required>
-            </textarea>
+            <textarea></textarea>
             </label>
             <br><br>
             <button type="submit">Submit</button>

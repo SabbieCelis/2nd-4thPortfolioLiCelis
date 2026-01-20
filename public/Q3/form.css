@@ -1,3 +1,6 @@
+* {
+    font-family: 'DM Mono';
+}
 body {
     display:flex;
     align-items: center;
