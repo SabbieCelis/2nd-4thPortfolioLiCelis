@@ -1,3 +1,6 @@
+* {
+    font-family: 'DM Mono';
+}
 body {
     display:flex;
     align-items: center;
@@ -33,4 +36,24 @@ button, #reset {
 }
 select {
     font-family: "DM Mono", monospace;
+}
+#viewBtn {
+    width: 130px;
+    background-color: #092793;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 65px;
+    font-family: "DM Mono", monospace;
+}
+select {
+    font-family: "DM Mono", monospace;
+}
+#viewBtn {
+    width: 130px;
+    background-color: #092793;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 65px; 
 }
