@@ -8,17 +8,25 @@
         <meta name="author" content="Sabbie Celis">
         <title>2Q Portfolio_CELIS</title>
         <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="./assetimg/p5logo.png" sizes="16x16" type="image/png">
+        <link rel="icon" href="./assetimg/p3logo.png" sizes="16x16" type="image/png">
         <script src="script.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <style>
             body {
-                background-color: rgb(23, 23, 23);
+                background-image: url(assetimg/portbg.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                margin-left: -10px;
+                overflow:hidden;
+                min-height: 100vh;
             }
             header {
-                background-image: url("assetimg/futaba.jpg");
                 background-size: cover;
                 background-position: top;
                 background-repeat: no-repeat;
@@ -30,10 +38,10 @@
                 text-align: right;
             }
             .logo {
-                size: 90px;
                 height: 100px;
                 margin-top: 55px;
-                margin-left: 600px;
+                margin-left: 60px;
+                filter: drop-shadow(6px 6px 6px rgb(255, 255, 255));
             }
             h1 {
                 font-family: 'Jersey 10', sans-serif;
@@ -41,41 +49,82 @@
                 margin-top: 66px;
                 margin-left: 50px;
                 text-align: right;
-                color: white;
+                color: rgb(195, 212, 255);
+                text-shadow: 2px 2px 4px #212b62;
             }
             p {
                 font-family: 'Jersey 10', sans-serif;
                 letter-spacing: 2px;
             }
             footer, section {
-                background-color: rgb(223, 4, 4);
+                background-color: #223860;
                 text-align: center;
+                color: rgb(220, 235, 255);
                 padding: 2px;
-                font-size: 14px;
+                font-size: 20px;
+                position: absolute;
+                bottom: -10px;
+                height: 60px;
+                width: 100%;
             }
             nav, ul {
                 text-align: center;
-                color: rgb(23, 23, 23)
+                color: rgb(23, 23, 23);
+                float:left;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
             }
             a, strong {
-                color: white;
+                color: rgb(25, 40, 93);
                 margin: 10px;
+                font-family: 'SUSE Mono', serif;
+            }
+            .container {
+                background-color: #cfe0ff;
+                padding: 10px;
+                border-radius: 10px;
+                width: 400px;
+                height: 250px;
+                margin-left: 135px;
+                margin-top: -50px;
+                border: 2px solid #8aaee0;
+                justify-content: center;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+                opacity: 0.9;
+            }
+            .container a {
+                margin-bottom: 50px;
+                margin-left: 45px;
+                justify-content: center;
+                opacity: 1.0;
+            }
+            .title {
+                font-family: 'Arvo', serif;
+                color: rgb(23, 39, 79);
+                margin-left: 95px;
+                margin-top: 10px;
+                margin-bottom: 5px;
+                font-size: 40px;
             }
 
         </style>
     </head>
     <body>
-        <header img="futaba.jpg">
-            <img src="./assetimg/p5logo.png" class="logo" style="width:100px";>
+        <header>
+            <img class="logo" src="./assetimg/p3logo.png" alt="Logo">
             <h1>Sabbie's 2Q Portfolio ( ˶°ㅁ°) !!</h1>
+            
         </header>
-        <div class="flipcard">
-            <div class="front" img src="assetimg/callingcard.jpg"></div>
+        
+        <div class="container">
+            <b></strong><p class="title">Exercises</p></b>
             <nav>
                 <ul>
                     <li><strong><a href="./public/2Q1GLithiumCelis.html"> Q2 1st and 2nd Graded Exercise </a></strong></li>
                     <li><strong><a href="./public/Q21NGLithiumCelis.html"> Q2 1st Non-Graded Exercise </a></strong></li>
                     <li><strong><a href="../public/Q3/Q3_2GLithiumCelis.html"> Q3 2nd Graded Exercise </a></strong></li>
+                    <li><strong><a href="../public/Q4/q41gLithiumCelis.html"> Q4 1st Graded Exercise </a></strong></li>
                 </ul>
             </nav>
         </div>
