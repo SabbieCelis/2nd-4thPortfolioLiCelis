@@ -17,18 +17,18 @@
             * {
                 font-family: 'DM Mono', monospace;
             }
-            header {
+            header, a {
                 justify-content: center;
                 float: center;
                 color:#fafcff;
                 text-align: center;
             }
             .box {
-                border: 1px solid rgb(255, 255, 255);
+                border: 1px solid rgb(26, 62, 116);
                 padding: 2em;
                 border-radius: 2%;
                 background-color: #ffffff;
-                box-shadow: 5px 10px 13px rgba(255, 255, 255, 0.3);
+                box-shadow: 5px 10px 13px rgba(12, 40, 84, 0.3);
                 background-color: #eaf4ff;
                 width:600px;
                 justify-content: center;
@@ -76,6 +76,7 @@
             }
             hr {
                 background-color: #1d2594;
+                color:#1d2594;
             }
         </style>
     </head>
@@ -85,7 +86,7 @@
             <h3 style="text-align: center;">By: Sabbie Celis</h3>
         </header>
         <div class=box>
-            <h3 class="txt" style="text-align: center;  font-size: 30px;">Add a Movie</h3>
+            <h3 class="txt" style="text-align: center;  font-size: 23px;">Add a Movie</h3>
             <hr style="margin-bottom: 20px; background-color: #1d2594;">
             <form>
                 <label><b>Title:</b></label>
@@ -114,6 +115,7 @@
                 <h3 class="txt" style="text-align: center;">Movie List</h3>
             </form>
         </div>
+        <a href="/index.html" style="margin-top: 16px;"><b>Back to Homepage?</b></a>
         <script>
             //stars
             document.querySelectorAll('.star').forEach(star => {
