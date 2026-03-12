@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="3rd Quarter Second Graded Exercisec - HTML Forms">
+        <meta name="keywords" content="3Q, Portfolio, Projects, Web Development">
+        <meta name="author" content="Sabbie Celis">
+        <title></title>
+        <link rel="stylesheet" href="form.css">
+        <script src="form.js" defer></script>
+        <link rel="icon" href="../assetimg/p3logo.png" sizes="16x16" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+        <style>
+            * {
+                font-family: 'DM Mono', monospace;
+            }
+            header, a {
+                justify-content: center;
+                float: center;
+                color:#fafcff;
+                text-align: center;
+            }
+            .box {
+                border: 1px solid rgb(26, 62, 116);
+                padding: 2em;
+                border-radius: 2%;
+                background-color: #ffffff;
+                box-shadow: 5px 10px 13px rgba(12, 40, 84, 0.3);
+                background-color: #eaf4ff;
+                width:600px;
+                justify-content: center;
+            }
+            .box > h3 {
+                justify-content: center;
+                align-items: center;
+            }
+            body {
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background-color: #6372ab;
+            }
+            label, .txt, option {
+                color:#2a3667;
+            }
+            .stars {
+                display: flex;
+                letter-spacing: 5px;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .star {
+                cursor: pointer;
+
+            }
+            .star:hover {
+                color:#6372ab;
+            }
+            button {
+                width: 100%;
+                height: 30px;
+                border-radius: 5px;
+                font-size: 16px;
+                color: white;
+                background-color: #1d2594;
+            }
+            input, select {
+                width: 100%;
+                height: 21px;
+                border-radius: 3px;
+                border: 2px solid #1d2594;
+            }
+            hr {
+                background-color: #1d2594;
+                color:#1d2594;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 style="text-align: center;">4th Quarter 1st Graded Exercise</h1>
+            <h3 style="text-align: center;">By: Sabbie Celis</h3>
+        </header>
+        <div class=box>
+            <h3 class="txt" style="text-align: center;  font-size: 23px;">Add a Movie</h3>
+            <hr style="margin-bottom: 20px; background-color: #1d2594;">
+            <form>
+                <label><b>Title:</b></label>
+                <input id=movieTitle type="text" required><br><br>
+                <label><b>Year</b></label>
+                <input id=movieYear type="number" required><br><br>
+                <label id="movieGenre"><b>Genre:</b></label>
+                <select>
+                    <option>Action</option>
+                    <option>Horror</option>
+                    <option>Comedy</option>
+                    <option>Sci-Fi</option>
+                    <option>Romance</option>
+                </select><br><br>
+
+                <label id=movieRating><b>Rating:</b></label>
+                <div class="stars">
+                    <span class="star" data-value="1">&#9733</span>
+                    <span class="star" data-value="2">&#9733</span>
+                    <span class="star" data-value="3">&#9733</span>
+                    <span class="star" data-value="4">&#9733</span>
+                    <span class="star" data-value="5">&#9733</span>
+                </div>
+
+                <button onclick="displayMovies()">Add Movie</button>
+                <h3 class="txt" style="text-align: center;">Movie List</h3>
+            </form>
+        </div>
+        <a href="/index.html" style="margin-top: 16px;"><b>Back to Homepage?</b></a>
+        <script>
+            //stars
+            document.querySelectorAll('.star').forEach(star => {
+                star.addEventListener('click', function() {
+                    const value = this.getAttribute('data-value');
+                    document.querySelectorAll('.star').forEach(s => {
+                        s.style.color = s.getAttribute('data-value') <= value ? '#1d2594' : '#ccc';
+                    });
+                });
+            });
+            let movies = [];
+            window.onload = displayMovies;
+
+            document.getElementById("movieForm").addEventListener("submit", function(e){
+                e.preventDefault();
+        
+            let title = document.getElementById('movieTitle').value;
+            let year = document.getElementById('movieYear').value;
+            let genre = document.querySelector('select').value;
+            let rating = 0;
+            });
+
+            movies.push(movie);
+        </script>
+    </body>
+    </html>
