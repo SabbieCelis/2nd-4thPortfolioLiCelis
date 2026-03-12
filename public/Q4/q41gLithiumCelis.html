@@ -88,13 +88,13 @@
         <div class=box>
             <h3 class="txt" style="text-align: center;  font-size: 23px;">Add a Movie</h3>
             <hr style="margin-bottom: 20px; background-color: #1d2594;">
-            <form>
+            <form id="mForm">
                 <label><b>Title:</b></label>
                 <input id=movieTitle type="text" required><br><br>
                 <label><b>Year</b></label>
                 <input id=movieYear type="number" required><br><br>
-                <label id="movieGenre"><b>Genre:</b></label>
-                <select>
+                <label><b>Genre:</b></label>
+                <select id="movieGenre">
                     <option>Action</option>
                     <option>Horror</option>
                     <option>Comedy</option>
@@ -111,34 +111,64 @@
                     <span class="star" data-value="5">&#9733</span>
                 </div>
 
-                <button onclick="displayMovies()">Add Movie</button>
+                <button type="submit">Add Movie</button>
                 <h3 class="txt" style="text-align: center;">Movie List</h3>
+                <div id="movieList"></div>
             </form>
         </div>
         <a href="/index.html" style="margin-top: 16px;"><b>Back to Homepage?</b></a>
         <script>
+            let rating = 0;
             //stars
             document.querySelectorAll('.star').forEach(star => {
                 star.addEventListener('click', function() {
-                    const value = this.getAttribute('data-value');
+                    const value = parseInt(this.getAttribute('data-value'));
+                    rating = value;
                     document.querySelectorAll('.star').forEach(s => {
-                        s.style.color = s.getAttribute('data-value') <= value ? '#1d2594' : '#ccc';
+                        s.style.color = parseInt(s.getAttribute('data-value')) <= value ? '#1d2594' : '#ccc';
                     });
                 });
             });
-            let movies = [];
-            window.onload = displayMovies;
 
-            document.getElementById("movieForm").addEventListener("submit", function(e){
-                e.preventDefault();
-        
-            let title = document.getElementById('movieTitle').value;
-            let year = document.getElementById('movieYear').value;
-            let genre = document.querySelector('select').value;
-            let rating = 0;
+            movieList = JSON.parse(localStorage.getItem("savedMovies")) || []
+
+            const form = document.getElementById('mForm');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const movieTitle = document.getElementById('movieTitle').value;
+                const movieYear = document.getElementById('movieYear').value;
+                const movieGenre = document.getElementById('movieGenre').value;
+
+                movieList.push({
+                    title: movieTitle,
+                    year: movieYear,
+                    genre: movieGenre,
+                    rating: rating
+                });
+
+                localStorage.setItem("savedMovies", JSON.stringify(movieList));
+
+                displayMovies(movieList);
+
+                console.log(movieList);
+
+                localStorage.setItem("savedMovies", JSON.stringify(movieList));
             });
 
-            movies.push(movie);
+            function displayMovies(movieList) {
+                displayList = "";
+
+                for (let movie of movieList) {
+                    let stars = "★".repeat(movie.rating) + "☆".repeat(5 - movie.rating);
+
+                    displayList += `${movie.title} (${movie.year}) - ${movie.genre}, Rating: ${stars} <br><br>`;
+                }
+                document.getElementById('movieList').innerHTML = displayList;
+            }
+
+            document.querySelectorAll('.star').forEach(s => s.style.color = '#ccc');
         </script>
     </body>
     </html>
