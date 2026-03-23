@@ -9,7 +9,7 @@ body {
     background-color: #212842;
     font-family: "DM Mono", monospace;
 }
-.box {
+form {
     border: 1px solid rgb(255, 255, 255);
     padding: 2.2em;
     border-radius: 2%;
@@ -25,7 +25,7 @@ textarea {
 input {
     border-radius: 6px;
 }
-button, #reset {
+button {
     width: 70px;
     background-color: #092793;
     color: white;
@@ -37,23 +37,4 @@ button, #reset {
 select {
     font-family: "DM Mono", monospace;
 }
-#viewBtn {
-    width: 130px;
-    background-color: #092793;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 65px;
-    font-family: "DM Mono", monospace;
-}
-select {
-    font-family: "DM Mono", monospace;
-}
-#viewBtn {
-    width: 130px;
-    background-color: #092793;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 65px; 
-}
+

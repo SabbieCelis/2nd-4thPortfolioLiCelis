@@ -78,6 +78,11 @@
                 background-color: #1d2594;
                 color:#1d2594;
             }
+            .delbtn {
+                margin-left:10px;
+                width: 80px;
+                background-color: #1f1f1f;
+            }
         </style>
     </head>
     <body>
@@ -87,7 +92,6 @@
         </header>
         <div class=box>
             <h3 class="txt" style="text-align: center;  font-size: 23px;">Add a Movie</h3>
-            <hr style="margin-bottom: 20px; background-color: #1d2594;">
             <form id="mForm">
                 <label><b>Title:</b></label>
                 <input id=movieTitle type="text" required><br><br>
@@ -111,9 +115,10 @@
                     <span class="star" data-value="5">&#9733</span>
                 </div>
 
-                <button type="submit">Add Movie</button>
+                <button class="submitbtn"type="submit">Add Movie</button>
+                <hr style="margin-bottom: 20px; margin-top: 30px;background-color: #1d2594;">
                 <h3 class="txt" style="text-align: center;">Movie List</h3>
-                <div id="movieList"></div>
+                <div class="movielist" id="movieList"></div>
             </form>
         </div>
         <a href="/index.html" style="margin-top: 16px;"><b>Back to Homepage?</b></a>
@@ -130,16 +135,17 @@
                 });
             });
 
-            movieList = JSON.parse(localStorage.getItem("savedMovies")) || []
+            //load
+            movieList = JSON.parse(localStorage.getItem("savedMovies")) || [];
 
             const form = document.getElementById('mForm');
 
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
 
-                const movieTitle = document.getElementById('movieTitle').value;
-                const movieYear = document.getElementById('movieYear').value;
-                const movieGenre = document.getElementById('movieGenre').value;
+                const movieTitle = document.getElementById('movieTitle').value.trim();
+                const movieYear = document.getElementById('movieYear').value.trim();
+                const movieGenre = document.getElementById('movieGenre').value.trim();
 
                 movieList.push({
                     title: movieTitle,
@@ -155,6 +161,7 @@
                 console.log(movieList);
 
                 localStorage.setItem("savedMovies", JSON.stringify(movieList));
+
             });
 
             function displayMovies(movieList) {
@@ -163,12 +170,15 @@
                 for (let movie of movieList) {
                     let stars = "★".repeat(movie.rating) + "☆".repeat(5 - movie.rating);
 
-                    displayList += `${movie.title} (${movie.year}) - ${movie.genre}, Rating: ${stars} <br><br>`;
+                    displayList += `${movie.title} (${movie.year}) - ${movie.genre}, Rating: ${stars}`
+                    displayList += `<button class="delbtn" onclick="deleteMovie('${movie.title}')">Delete</button><br><br> `;
                 }
                 document.getElementById('movieList').innerHTML = displayList;
             }
 
             document.querySelectorAll('.star').forEach(s => s.style.color = '#ccc');
+
+            //function deleteMovie {}
         </script>
     </body>
     </html>
