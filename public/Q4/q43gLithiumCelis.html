@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- change the authors name to both your names-->
+  <meta name="author" content="Sabbie Celis">
+  <meta name="description" content="testing and debugging">
+  <meta name="keywords" content="testing and debugging">
+  <title>CS 3 </title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <style>
+    html {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: cornsilk;
+  color:royalblue;
+  padding: 0;
+  margin: 0;
+}
+
+section, header {
+  padding-left: 2%;
+}
+
+/*---- CSS to control the navigation bar --- 
+Requirements for the navigation:
+- Navigation should all be on one line only and located on the first line of the browser and will not scroll with the rest of the content.  
+- There should also a hover effect on each of the links to change background and foreground color.
+*/
+nav {
+    width: 100%;
+    background-color: #333;
+    display: flex;
+}
+
+nav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/*------ to control coordinatePlane, the location of the small red box  --------*/
+#coordinatePlane {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    border: 1px solid black;
+}
+.point {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+}
+.axis {
+    position: absolute;
+    background-color: black;
+}
+
+#xAxis {
+    left: 0;
+    top: 200px;
+    width: 100%;
+    height: 1px;
+}
+#yAxis {
+    left: 200px;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+}
+
+/* ----- CSS properties for footer tag to display socmed icons facebook, twitter and github using sprites ---
+- Discover how to use image sprites to make this work
+*/
+footer {
+    width: 100%;
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+footer a {
+  text-decoration: none;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url('sprites.png') no-repeat;
+}
+.facebook {
+    background-position: -226px -129px;
+}
+.twitter {
+    background-position: -340px -129px;
+}
+.github {
+    background-position: -456px -129px;
+}
+
+.facebook:hover {
+  background-position: -226px -55px;
+}
+.twitter:hover {
+  background-position: -340px -54px;
+}
+.github:hover {
+  background-position: -456px -54px;
+}
+
+/* --- CSS for documenting process in the table in the errorlogs.html --*/
+table{
+  border-collapse: collapse;
+}
+
+th, td, tr{
+  padding: 5px;
+  border: 1px solid #333;  
+}
+
+.rColor {
+  background-color: navy;
+  color: white;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#start">Table</a>
+      <a href="#input">Input</a>
+      <a href="#output">Output</a>
+      <a href="errorlogs.html">Error Logs</a>
+    </nav>
+    
+    <h1 style="padding: 30px">Sabbie Celis / Lithium  - Mar 2026 </h1>
+    <h2 id="start"> Nlogonia </h2>
+  </header>
+
+  <section id="table">
+    <table> 
+      <tr class="rColor">
+        <th> input </th> <th> output</th>
+      </tr>
+      <tr class="rColor"> 
+        <td colspan="2"> Sample Data</td>
+      </tr>
+      <tr> 
+        <td> 2 1 10 10 </td> <td> NE</td>
+      </tr>
+      <tr> 
+        <td> 2 1 -10 1 </td> <td> divisa</td>
+      </tr>
+      <tr> 
+        <td> 2 1 0 33 </td> <td> NO </td>
+      </tr>
+      <tr  class="rColor"> 
+        <td colspan="2"> For current Input</td>
+      </tr>
+      <tr> 
+        <td id="in1"> 0 0 0 0 </td> <td id="out1"> divisa </td>
+      </tr>
+    </table>
+    <hr>
+  </section>
+  
+  <section id="input">
+    <h2> Input </h2>
+  
+    <h4>Axis Reference:</h4>
+    <p>
+      <input type="number" id="x0" placeholder="0">
+      <input type="number" id="y0" placeholder="0">
+    </p>
+    
+    <h4>Point Coordinates:</h4>
+    <p>
+      <input type="number" id="x" placeholder="x"> 
+      <input type="number" id="y" placeholder="y">
+    </p>
+    <button onclick="plotPoint(Number(x0.value),Number(y0.value),Number(x.value), Number(y.value))"> Plot </button>
+  </section>
+  
+  <section id="output">
+    <h2 id="output"> Output </h2>
+  
+    <div id="coordinatePlane">
+        <div id="xAxis" class="axis"></div>
+        <div id="yAxis" class="axis"></div>
+    </div>
+    <hr>
+  </section>
+  
+  <!--- anchors for socmed site are done with image sprites -->
+  <footer>
+    <a href="https://facebook.com"> 
+    <div class="icon facebook"></div>
+    </a>
+    <a href="https://twitter.com">
+    <div class="icon twitter"></div>
+    </a>
+    <a href="https://github.com">
+    <div class="icon github"></div>
+    </a>
+  </footer>
+  <script>
+  function plotPoint() {
+    console.log(x0, y0, x, y) // checks the arguments passed to this function
+    in1.innerHTML = x0 + " " + y0 + " " + x + " " + y;
+    var point = document.createElement('div');  
+    point.className = 'point';
+    /* control where to place the div on the screen using left and bottom of position:absolute */
+    point.styleleft = (x - x0 + 200 - 5) + 'px'; // subtract half the width of the point to center it by changing left css property
+    point.stylebottom = (y - y0 + 200 - 5) + 'px'; // subtract half the height of the point to center it by changing bottom css property
+    document.getElementById('coordinatePlane').appendChild(point);
+
+    if (x > x0 && y > y0){
+      out1.innerHTML = "NE"
+    }
+    else if (x < x0 && y < y0){
+      out1.innerHTML = "SO"
+    }
+    else if (x > x0 && y < y0){
+      out1.innerHTML = "SE"
+    }
+    else if (x < x0 && y > y0){
+      out1.innerHTML = "NO"
+    }
+    else{
+      out1.innerHTML = "divisa"
+    }
+}
+    </script>
+</body>
+
+</html>
