@@ -138,6 +138,8 @@
             //load
             movieList = JSON.parse(localStorage.getItem("savedMovies")) || [];
 
+            displayMovies(movieList);
+            
             const form = document.getElementById('mForm');
 
             form.addEventListener('submit', function (event) {
