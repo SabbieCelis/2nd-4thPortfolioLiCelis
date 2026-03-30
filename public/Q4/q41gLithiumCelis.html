@@ -178,7 +178,11 @@
 
             document.querySelectorAll('.star').forEach(s => s.style.color = '#ccc');
 
-            //function deleteMovie {}
+            function deleteMovie(title) {
+                movieList = movieList.filter(movie => movie.title !== title);
+                localStorage.setItem("savedMovies", JSON.stringify(movieList));
+                displayMovies(movieList);
+            }
         </script>
     </body>
     </html>
