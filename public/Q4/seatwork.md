@@ -1,8 +1,7 @@
-<style>h2 { border-bottom: 0; }</style>
-
 # Seatwork No. 2 (CSS Position and z-index)
 
 ## Answers to Guided Questions
+
 ### *Step 1 (static vs relative)*
 The relative positioning bases off of the static position. With its respective adjustments, it will cause the element to be adjusted away from its normal/static position.
 
@@ -44,7 +43,15 @@ Notice appears on top of the content because of its z-index. The values of z-ind
   </div>
 ```
 
-* When .content has `position:relative`, it stay in its normal place in our layout, our top and left attributes only adjust the position it and our .notice stays anchored (since it is nested inside our content div). Meanwhile when we have `position:fixed` 
+* When .content has `position:relative`, it stay in its normal place in our layout, our top and left attributes only adjust the position it and our .notice stays anchored (since it is nested inside our content div). Meanwhile when we have `position:fixed` it will stay the same, but .content will be moved to another position. When we remove our .notice from the content div, it will float around the viewport.
+
+* The .notice box appears above the .content box because of its higher z-index value (2 > 1). Z-index controls the stacking order of different elements, whereas elements with higher values are displayed infront of those with lower values.
 
 # Reflection
 1. To summarize, `position:static` is the default positioning for all HTML elements meaning it is placed according to document flow and it is the only position value that is not affected by the top bottom left right adjustments. `position:relative` is positioned *relative* to its static position and can be shifted using the top, left, right, bottom properties. `position:fixed` is positioned relative to the viewport or webpage, meaning it wwill stay on screen regardless of scrolling away. `position:absolute` is positioned based on the nearest positioned element (besides static), if no positioned ancestors are present, it is positioned relative to the viewport.
+
+2. Absolute positioning depends on the nearest positioned ancestor (that is NOT static). If the parent element has its own position value other than static, then the element with `position:absolute` will be placed relative to that parent. If not, it will be placed relative to the viewport.
+
+3. `position:sticky`is a combination of both relative and fixed positions. Before scrolling, it is positioned relative until it reaches a point in scrolling, it will then *stick* into that place just like `position:fixed`.
+
+4. Positioning can be used to highlight important information by controlling where and when elements appear  on the webpage. An example of this can be the use of `position:sticky` for our navigation bar and/or `position:fixed` for our footer.
