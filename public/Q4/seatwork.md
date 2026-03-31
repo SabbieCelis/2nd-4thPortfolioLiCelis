@@ -52,6 +52,8 @@ Notice appears on top of the content because of its z-index. The values of z-ind
 
 2. Absolute positioning depends on the nearest positioned ancestor (that is NOT static). If the parent element has its own position value other than static, then the element with `position:absolute` will be placed relative to that parent. If not, it will be placed relative to the viewport.
 
-3. `position:sticky`is a combination of both relative and fixed positions. Before scrolling, it is positioned relative until it reaches a point in scrolling, it will then *stick* into that place just like `position:fixed`.
+3. `position:sticky`is a combination of both relative and fixed positions. Before scrolling, it is positioned relative until it reaches a point where we scroll past it, it will then *stick* into that place just like `position:fixed`. 
+
+    * Additional info that I wanna share for no. 3: `position:sticky` can actually be seen when viewing our github code files! when we scroll, we would have `Previw | Code | Blame` and shows our file path (or where thje file is located).
 
 4. Positioning can be used to highlight important information by controlling where and when elements appear  on the webpage. An example of this can be the use of `position:sticky` for our navigation bar and/or `position:fixed` for our footer.
