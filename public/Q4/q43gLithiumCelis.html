@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <!-- change the authors name to both your names-->
-  <meta name="author" content="Sabbie Celis">
+  <meta name="author" content="Sir Roy/Al Mendoza">
   <meta name="description" content="testing and debugging">
   <meta name="keywords" content="testing and debugging">
   <title>CS 3 </title>
@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&family=Roboto&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
   <style>
     html {
   height: 100%;
@@ -41,10 +42,10 @@ Requirements for the navigation:
 nav {
     width: 100%;
     background-color: #333;
-    display: flex;
 }
 
 nav a {
+    display: inline-block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 20px;
@@ -64,6 +65,7 @@ nav a:hover {
     border: 1px solid black;
 }
 .point {
+    position: absolute;
     height: 10px;
     width: 10px;
     background-color: red;
@@ -104,7 +106,7 @@ footer a {
     width: 32px;
     height: 32px;
     display: inline-block;
-    background: url('sprites.png') no-repeat;
+    background: url(/assetimg/sprites.png) no-repeat;
 }
 .facebook {
     background-position: -226px -129px;
@@ -152,7 +154,7 @@ th, td, tr{
       <a href="errorlogs.html">Error Logs</a>
     </nav>
     
-    <h1 style="padding: 30px">Sabbie Celis / Lithium  - Mar 2026 </h1>
+    <h1 style="padding: 30px">Your Name/Section  - Mar 2026 </h1>
     <h2 id="start"> Nlogonia </h2>
   </header>
 
@@ -223,14 +225,14 @@ th, td, tr{
     </a>
   </footer>
   <script>
-  function plotPoint() {
+  function plotPoint(x0, y0, x, y) {
     console.log(x0, y0, x, y) // checks the arguments passed to this function
     in1.innerHTML = x0 + " " + y0 + " " + x + " " + y;
     var point = document.createElement('div');  
     point.className = 'point';
     /* control where to place the div on the screen using left and bottom of position:absolute */
-    point.styleleft = (x - x0 + 200 - 5) + 'px'; // subtract half the width of the point to center it by changing left css property
-    point.stylebottom = (y - y0 + 200 - 5) + 'px'; // subtract half the height of the point to center it by changing bottom css property
+    point.style.left = (x - x0 + 200 - 5) + 'px'; // subtract half the width of the point to center it by changing left css property
+    point.style.bottom = (y - y0 + 200 - 5) + 'px'; // subtract half the height of the point to center it by changing bottom css property
     document.getElementById('coordinatePlane').appendChild(point);
 
     if (x > x0 && y > y0){
@@ -249,7 +251,6 @@ th, td, tr{
       out1.innerHTML = "divisa"
     }
 }
-    </script>
+</script>
 </body>
-
 </html>

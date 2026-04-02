@@ -54,6 +54,6 @@ Notice appears on top of the content because of its z-index. The values of z-ind
 
 3. `position:sticky`is a combination of both relative and fixed positions. Before scrolling, it is positioned relative until it reaches a point where we scroll past it, it will then *stick* into that place just like `position:fixed`. 
 
-    * Additional info that I wanna share for no. 3: `position:sticky` can actually be seen when viewing our github code files! When we scroll past the header, we would have `Preview | Code | Blame` and shows our file path (or where the file is located) sticked at the top of the viiewport.
+    * Additional info that I wanna share for no. 3: `position:sticky` can actually be seen when viewing our github code files! When we scroll past the header, we would have `Preview | Code | Blame` and shows our file path (or where the file is located) sticked at the top of the viewport.
 
 4. Positioning can be used to highlight important information by controlling where and when elements appear  on the webpage. An example of this can be the use of `position:sticky` for our navigation bar and/or `position:fixed` for our footer.
